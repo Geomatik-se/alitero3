@@ -32,6 +32,8 @@ const RequestForm = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -54,12 +56,57 @@ const RequestForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form Submitted:', formData);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setLoading(true);
+    setError('');
+
+    try {
+      // Vorbereitung der Daten für StaticForms
+      const staticFormsData = {
+        accessKey: 'sf_71gh85f781lfgmk6ifcj3ce7',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        industry: formData.industry,
+        location: formData.location,
+        status: formData.status,
+        websiteLink: formData.websiteLink,
+        scope: formData.scope.join(', '),
+        scopeOther: formData.scopeOther,
+        goals: formData.goals,
+        languages: formData.languages.join(', '),
+        languageOther: formData.languageOther,
+        budget: formData.budget,
+        timeline: formData.timeline,
+        support: formData.support.join(', '),
+        notes: formData.notes,
+        redirectTo: `${window.location.origin}${window.location.pathname}?success=true`
+      };
+
+      const response = await fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(staticFormsData),
+      });
+
+      if (response.ok) {
+        console.log('Formular erfolgreich versendet');
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setError('Fehler beim Versenden des Formulars. Bitte versuchen Sie es später erneut.');
+        console.error('StaticForms Fehler:', response.statusText);
+      }
+    } catch (err) {
+      setError('Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung.');
+      console.error('Fehler beim Formularversand:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -69,6 +116,7 @@ const RequestForm = () => {
           <SafeIcon icon={FiCheck} className="h-8 w-8 text-green-600" />
         </div>
         <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.success}</h3>
+        <p className="text-gray-600">Ihre Anfrage wurde erfolgreich versendet. Wir werden uns in Kürze bei Ihnen melden.</p>
       </div>
     );
   }
@@ -230,6 +278,11 @@ const RequestForm = () => {
 
         {/* Privacy & Submit */}
         <section className="bg-gray-50 p-6 rounded-lg">
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <p className="text-sm text-red-700 font-medium">{error}</p>
+            </div>
+          )}
           <p className="text-sm text-gray-600 mb-4">{t.privacy.text}</p>
           <label className="flex items-start space-x-3 cursor-pointer mb-6">
             <input type="checkbox" name="privacy" required checked={formData.privacy} className="mt-1 h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300" onChange={handleChange} />
@@ -237,14 +290,14 @@ const RequestForm = () => {
           </label>
           <button
             type="submit"
-            disabled={!formData.privacy}
+            disabled={!formData.privacy || loading}
             className={`w-full md:w-auto px-8 py-4 rounded-lg font-bold text-white shadow-lg transition-all duration-200 flex items-center justify-center ${
-              formData.privacy 
-                ? 'bg-blue-600 hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-0.5' 
-                : 'bg-gray-400 cursor-not-allowed'
+              !formData.privacy || loading
+                ? 'bg-gray-400 cursor-not-allowed' 
+                : 'bg-blue-600 hover:bg-blue-700 hover:shadow-xl transform hover:-translate-y-0.5'
             }`}
           >
-            {t.submit}
+            {loading ? 'Wird versendet...' : t.submit}
             <SafeIcon icon={FiSend} className="ml-2 h-5 w-5" />
           </button>
         </section>
