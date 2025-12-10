@@ -78,7 +78,6 @@ const Services = () => {
                 <p className="text-2xl font-bold text-blue-600">
                   {t.example.priceOneYear}
                 </p>
-                <p className="text-xs text-gray-500 mt-1">für ein Jahr</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg">
@@ -88,7 +87,6 @@ const Services = () => {
                 <p className="text-2xl font-bold text-purple-600">
                   {t.example.priceThreeYears}
                 </p>
-                <p className="text-xs text-gray-500 mt-1">für drei Jahre</p>
               </div>
             </div>
 

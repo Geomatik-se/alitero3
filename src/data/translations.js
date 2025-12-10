@@ -70,7 +70,7 @@ export const translations = {
         'Dynamische Karte für den Standort',
         'Dreisprachig'
       ],
-      servicePackage: 'Inklusive Servicepaket (.de-Domain, Webspace, kleinere Änderungen und Ergänzungen)',
+      servicePackage: 'Website inklusive Servicepaket für ein Jahr (.de-Domain, Webspace, kleinere Änderungen und Ergänzungen)',
       priceOneYear: '700 Euro zzgl. Mehrwertsteuer',
       servicePackageThreeYears: 'inklusive Servicepaket für drei Jahre:',
       priceThreeYears: '850 Euro zzgl. Mehrwertsteuer'
@@ -313,7 +313,7 @@ export const translations = {
         'Dynamic map for location',
         'Three languages'
       ],
-      servicePackage: 'Including service package (.de domain, web space, minor changes and additions)',
+      servicePackage: 'Website including service package for one year (.de domain, web space, minor changes and additions)',
       priceOneYear: '700 Euro plus VAT',
       servicePackageThreeYears: 'including service package for three years:',
       priceThreeYears: '850 Euro plus VAT'
@@ -556,7 +556,7 @@ export const translations = {
         'Dynamisk karta för plats',
         'Tre språk'
       ],
-      servicePackage: 'Inklusive servicepaket (.de-domän, webbspace, mindre ändringar och tillägg)',
+      servicePackage: 'Webbplats inklusive servicepaket för ett år (.de-domän, webbspace, mindre ändringar och tillägg)',
       priceOneYear: '700 Euro plus moms',
       servicePackageThreeYears: 'inklusive servicepaket för tre år:',
       priceThreeYears: '850 Euro plus moms'
@@ -799,7 +799,7 @@ export const translations = {
         'Dinamikus térkép a helyhez',
         'Három nyelv'
       ],
-      servicePackage: 'Inkluzíve szupportcsomag (.de domain, webspace, kisebb változtatások és kiegészítések)',
+      servicePackage: 'Webhely inkluzíve szupportcsomag egy évre (.de domain, webspace, kisebb változtatások és kiegészítések)',
       priceOneYear: '700 Euro plus ÁFA',
       servicePackageThreeYears: 'inkluzíve szupportcsomag három évre:',
       priceThreeYears: '850 Euro plus ÁFA'
