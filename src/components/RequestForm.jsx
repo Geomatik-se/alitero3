@@ -62,48 +62,45 @@ const RequestForm = () => {
     setError('');
 
     try {
-      // Vorbereitung der Daten für StaticForms
-      const staticFormsData = {
-        accessKey: 'sf_71gh85f781lfgmk6ifcj3ce7',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company: formData.company,
-        industry: formData.industry,
-        location: formData.location,
-        status: formData.status,
-        websiteLink: formData.websiteLink,
-        scope: formData.scope.join(', '),
-        scopeOther: formData.scopeOther,
-        goals: formData.goals,
-        languages: formData.languages.join(', '),
-        languageOther: formData.languageOther,
-        budget: formData.budget,
-        timeline: formData.timeline,
-        support: formData.support.join(', '),
-        notes: formData.notes,
-        redirectTo: `${window.location.origin}${window.location.pathname}?success=true`
-      };
+      // Vorbereitung der Daten für StaticForms mit FormData
+      const formDataToSend = new FormData();
+      formDataToSend.append('accessKey', 'sf_71gh85f781lfgmk6ifcj3ce7');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('industry', formData.industry);
+      formDataToSend.append('location', formData.location);
+      formDataToSend.append('status', formData.status);
+      formDataToSend.append('websiteLink', formData.websiteLink);
+      formDataToSend.append('scope', formData.scope.join(', '));
+      formDataToSend.append('scopeOther', formData.scopeOther);
+      formDataToSend.append('goals', formData.goals);
+      formDataToSend.append('languages', formData.languages.join(', '));
+      formDataToSend.append('languageOther', formData.languageOther);
+      formDataToSend.append('budget', formData.budget);
+      formDataToSend.append('timeline', formData.timeline);
+      formDataToSend.append('support', formData.support.join(', '));
+      formDataToSend.append('notes', formData.notes);
 
       const response = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(staticFormsData),
+        body: formDataToSend,
       });
+
+      const responseData = await response.json();
 
       if (response.ok) {
         console.log('Formular erfolgreich versendet');
         setSubmitted(true);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        setError('Fehler beim Versenden des Formulars. Bitte versuchen Sie es später erneut.');
-        console.error('StaticForms Fehler:', response.statusText);
+        setError(responseData.message || 'Fehler beim Versenden des Formulars. Bitte versuchen Sie es später erneut.');
+        console.error('StaticForms Fehler:', responseData);
       }
     } catch (err) {
-      setError('Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung.');
-      console.error('Fehler beim Formularversand:', err);
+      setError('Fehler beim Versenden. Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.');
+      console.error('Fehler beim Formularversand:', err.message);
     } finally {
       setLoading(false);
     }
