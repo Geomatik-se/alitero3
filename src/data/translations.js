@@ -1,9 +1,9 @@
 export const translations = {
   de: {
     nav: {
-      home: 'Startseite',
+      home: 'Start',
       services: 'Leistungen',
-      request: 'Projekt anfragen'
+      request: 'Anfragen'
     },
     hero: {
       title: 'Moderne Websites für kleine Unternehmen',
@@ -60,6 +60,21 @@ export const translations = {
         'Kleine inhaltliche Ergänzungen'
       ]
     },
+    example: {
+      title: 'Zum Beispiel',
+      subtitle: 'Eine Website des Umfanges dieser Seite',
+      features: [
+        '5 Seiten inklusive Impressum und Datenschutzerklärung',
+        'Umfangreiches Formular',
+        'KI-erstellte Bilder für die Hero-Sektion',
+        'Dynamische Karte für den Standort',
+        'Dreisprachig'
+      ],
+      servicePackage: 'Inklusive Servicepaket (.de-Domain, Webspace, kleinere Änderungen und Ergänzungen)',
+      priceOneYear: '700 Euro zzgl. Mehrwertsteuer',
+      servicePackageThreeYears: 'inklusive Servicepaket für drei Jahre:',
+      priceThreeYears: '850 Euro zzgl. Mehrwertsteuer'
+    },
     target: {
       title: 'Ideal für',
       description: 'Kleine Unternehmen, die selten Änderungen haben und sich nicht mit Technik beschäftigen möchten:',
@@ -78,7 +93,7 @@ export const translations = {
       email: 'E-Mail senden'
     },
     footer: {
-      copyright: '© 2024 Webentwicklung. Alle Rechte vorbehalten.',
+      copyright: '© 2026 Webentwicklung. Alle Rechte vorbehalten.',
       privacy: 'Datenschutz',
       imprint: 'Impressum'
     },
@@ -287,6 +302,21 @@ export const translations = {
         'Replace images', 
         'Small content additions'
       ]
+    },
+    example: {
+      title: 'For Example',
+      subtitle: 'A website of the scope of this page',
+      features: [
+        '5 pages including imprint and privacy policy',
+        'Comprehensive contact form',
+        'AI-generated images for the hero section',
+        'Dynamic map for location',
+        'Three languages'
+      ],
+      servicePackage: 'Including service package (.de domain, web space, minor changes and additions)',
+      priceOneYear: '700 Euro plus VAT',
+      servicePackageThreeYears: 'including service package for three years:',
+      priceThreeYears: '850 Euro plus VAT'
     },
     target: {
       title: 'Ideal for',
@@ -516,6 +546,21 @@ export const translations = {
         'Små innehållstillägg'
       ]
     },
+    example: {
+      title: 'Till exempel',
+      subtitle: 'En webbplats av denna sidans omfattning',
+      features: [
+        '5 sidor inklusive imprint och integritetspolicy',
+        'Omfattande kontaktformulär',
+        'AI-genererade bilder för herosektionen',
+        'Dynamisk karta för plats',
+        'Tre språk'
+      ],
+      servicePackage: 'Inklusive servicepaket (.de-domän, webbspace, mindre ändringar och tillägg)',
+      priceOneYear: '700 Euro plus moms',
+      servicePackageThreeYears: 'inklusive servicepaket för tre år:',
+      priceThreeYears: '850 Euro plus moms'
+    },
     target: {
       title: 'Idealisk för',
       description: 'Små företag som sällan har ändringar och inte vill hantera teknik:',
@@ -744,6 +789,21 @@ export const translations = {
         'Kis tartalmi kiegészítések'
       ]
     },
+    example: {
+      title: 'Például',
+      subtitle: 'Egy ilyen oldal terjedelmi weboldalat',
+      features: [
+        '5 oldal az impresszummal és az adatvédelmi nyilatkozattal',
+        'Átfogó kapcsolati űrlap',
+        'AI-generált képek a héroszekcióhoz',
+        'Dinamikus térkép a helyhez',
+        'Három nyelv'
+      ],
+      servicePackage: 'Inkluzíve szupportcsomag (.de domain, webspace, kisebb változtatások és kiegészítések)',
+      priceOneYear: '700 Euro plus ÁFA',
+      servicePackageThreeYears: 'inkluzíve szupportcsomag három évre:',
+      priceThreeYears: '850 Euro plus ÁFA'
+    },
     target: {
       title: 'Ideális',
       description: 'Kisvállalkozásoknak, amelyek ritkán változtatnak és nem akarnak technológiával foglalkozni:',
@@ -912,156 +972,3 @@ export const translations = {
     }
   }
 };
-
-// Add imprint translations
-Object.keys(translations).forEach(lang => {
-  if (lang === 'de') {
-    translations.de.imprint = {
-      title: 'Impressum',
-      lastUpdated: 'Zuletzt aktualisiert',
-      introduction: 'Angaben gemäß § 5 TMG und § 7 ECG',
-      sections: {
-        responsible: {
-          title: 'Verantwortlich für den Inhalt',
-          name: 'Sören Padel',
-          address: 'Örträsk 48, 935 93 Norsjö, Schweden',
-          email: 'E-Mail: info@alitero.eu',
-          phone: 'Telefon: +49 157 3004 1651'
-        },
-        eu: {
-          title: 'EU-Dispute Resolution',
-          content: 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Die Plattform finden Sie unter https://ec.europa.eu/consumers/odr/.'
-        },
-        liability: {
-          title: 'Haftungsausschluss',
-          intro: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.',
-          accuracy: 'Die Inhalte dieser Website werden sorgfältig und gewissenhaft erstellt und regelmäßig aktualisiert. Trotz aller Sorgfalt können wir jedoch keine Gewähr für die Aktualität, Richtigkeit und Vollständigkeit aller Inhalte übernehmen.',
-          liability_clause: 'Haftungsansprüche gegen den Autor, die sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.'
-        },
-        copyright: {
-          title: 'Urheberrecht',
-          content: 'Die auf dieser Website veröffentlichten Inhalte sind urheberrechtlich geschützt. Jede vom Urheberrecht nicht zugelassene Verwertung bedarf vorheriger ausdrücklicher Zustimmung des Autors oder Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung in elektronischen Systemen und Verbreitung.'
-        },
-        dataprivacy: {
-          title: 'Datenschutz',
-          content: 'Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Informationen zu unserer Datenschutzerklärung finden Sie unter dem Punkt "Datenschutz".'
-        },
-        disclaimer: {
-          title: 'Haftungsausschluss für Inhalte',
-          content: 'Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 des Telemediengesetzes (TMG) sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.'
-        }
-      }
-    };
-  } else if (lang === 'en') {
-    translations.en.imprint = {
-      title: 'Legal Notice',
-      lastUpdated: 'Last Updated',
-      introduction: 'Information required by law (TMG and ECG)',
-      sections: {
-        responsible: {
-          title: 'Responsible for Content',
-          name: 'Sören Padel',
-          address: 'Örträsk 48, 935 93 Norsjö, Sweden',
-          email: 'Email: info@alitero.eu',
-          phone: 'Phone: +49 157 3004 1651'
-        },
-        eu: {
-          title: 'EU Dispute Resolution',
-          content: 'The European Commission provides a platform for online dispute resolution (ODR). You can find this platform at https://ec.europa.eu/consumers/odr/.'
-        },
-        liability: {
-          title: 'Disclaimer',
-          intro: 'Despite careful and thorough content control, we accept no liability for the contents of external links. The operators of the linked pages are solely responsible for their content.',
-          accuracy: 'The content of this website is created carefully and conscientiously and updated on a regular basis. However, despite all care, we cannot guarantee the timeliness, accuracy and completeness of all content.',
-          liability_clause: 'Claims for damages by the author, which relate to damage of a material or non-material nature caused by the use or non-use of the information presented or by the use of incorrect and incomplete information, are fundamentally excluded.'
-        },
-        copyright: {
-          title: 'Copyright',
-          content: 'The content published on this website is protected by copyright. Any use not permitted by copyright law requires the prior express consent of the author or copyright holder. This applies in particular to copying, editing, translation, storage, processing in electronic systems and distribution.'
-        },
-        dataprivacy: {
-          title: 'Data Privacy',
-          content: 'We take the protection of your personal data seriously. For information about our privacy policy, please see the "Privacy" section.'
-        },
-        disclaimer: {
-          title: 'Content Liability Disclaimer',
-          content: 'As a service provider, we are responsible for our own content on these pages according to general law. However, as a service provider, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity under §§ 8 to 10 of the Teleservices Act (TMG).'
-        }
-      }
-    };
-  } else if (lang === 'sv') {
-    translations.sv.imprint = {
-      title: 'Meddelande',
-      lastUpdated: 'Senast uppdaterad',
-      introduction: 'Uppgifter enligt lag',
-      sections: {
-        responsible: {
-          title: 'Ansvarig för innehål',
-          name: 'Sören Padel',
-          address: 'Örträsk 48, 935 93 Norsjö, Sverige',
-          email: 'E-post: info@alitero.eu',
-          phone: 'Telefon: +49 157 3004 1651'
-        },
-        eu: {
-          title: 'EU-tvistlösning',
-          content: 'Europeiska kommissionen tillhandahåller en plattform för onlinetvistlösning (ODR). Du kan hitta denna plattform på https://ec.europa.eu/consumers/odr/.'
-        },
-        liability: {
-          title: 'Ansvarsfriskrivning',
-          intro: 'Trots noggrann och grundlig innehållskontroll accepterar vi inget ansvar för innehållet i externa länkar. Operatörerna av de länkade sidorna är ensamt ansvariga för sitt innehål.',
-          accuracy: 'Innehållet på denna webbplats skapas noggrant och samvetsgrann och uppdateras regelbundet. Vi kan dock inte garantera aktualitet, noggrannhet och fullständighet av allt innehål.',
-          liability_clause: 'Skaderegresser mot författaren, som avser skada av materiell eller immateriell slag orsakad av användning eller icke-användning av den presenterade informationen eller genom användning av felaktig och ofullständig information, är i princip uteslutna.'
-        },
-        copyright: {
-          title: 'Upphovsrätt',
-          content: 'Innehållet publicerat på denna webbplats är skyddat av upphovsrätt. All användning som inte tillåts enligt upphovsrätten kräver föregående uttrycklig samtycke från författaren eller rättighetsinnehavaren. Detta gäller särskilt kopiering, redigering, översättning, lagring, behandling i elektroniska system och distribution.'
-        },
-        dataprivacy: {
-          title: 'Dataskydd',
-          content: 'Vi tar skyddet av dina personuppgifter på allvar. Information om vår integritetspolicy finns i avsnittet "Integritet".'
-        },
-        disclaimer: {
-          title: 'Ansvarsfriskrivning för innehål',
-          content: 'Som tjänstleverantör är vi ansvariga för vårt eget innehål på dessa sidor enligt allmän lag. Vi är dock inte skyldiga att övervaka överförd eller lagrad information från tredje part eller att undersöka omständigheter som indikerar olaglig verksamhet.'
-        }
-      }
-    };
-  } else if (lang === 'hu') {
-    translations.hu.imprint = {
-      title: 'Impresszum',
-      lastUpdated: 'Utoljára frissítve',
-      introduction: 'A jogszabály által előírt adatok',
-      sections: {
-        responsible: {
-          title: 'A tartalom felelőse',
-          name: 'Sören Padel',
-          address: 'Örträsk 48, 935 93 Norsjö, Svédország',
-          email: 'E-mail: info@alitero.eu',
-          phone: 'Telefon: +49 157 3004 1651'
-        },
-        eu: {
-          title: 'EU vitarendezés',
-          content: 'Az Európai Bizottság online vitarendezési platformot (ODR) biztosít. Ezt a platformot a https://ec.europa.eu/consumers/odr/ címen találja.'
-        },
-        liability: {
-          title: 'Felelősségkizárás',
-          intro: 'A gondos és alapos tartalomvédelme ellenére nem vállalunk felelősséget a külső linkek tartalmáért. A hivatkozott oldalak kezelői kizárólag saját tartalmukért felelnek.',
-          accuracy: 'A weboldal tartalma gondosan és lelkiismeretesen készül és rendszeresen frissül. Azonban nem tudjuk garantálni az összes tartalom aktualitását, pontosságát és teljességét.',
-          liability_clause: 'A szerzővel szemben támasztott kártérítési igények, amelyek a bemutatott információ használatából vagy meg nem használásából, illetve a helytelen és hiányos információ használatából eredő anyagi vagy nem anyagi jellegű kárra vonatkoznak, alapvetően kizártak.'
-        },
-        copyright: {
-          title: 'Szerzői jog',
-          content: 'Az ezen a weboldal közzétett tartalom szerzői jog által védett. A szerzői jogok nem engedélyezett felhasználása a szerző vagy jogosult előzetes kifejezett beleegyezését igényli. Ez különösen a másolásra, szerkesztésre, fordításra, tárolásra, elektronikus rendszerekben történő feldolgozásra és terjesztésre vonatkozik.'
-        },
-        dataprivacy: {
-          title: 'Adatvédelem',
-          content: 'Komolyan vesszük személyes adatai védelmét. Az adatvédelmi irányelveinket az "Adatvédelem" szakaszban találja.'
-        },
-        disclaimer: {
-          title: 'Tartalom felelősségkizárása',
-          content: 'Szolgáltatóként saját tartalmakért felelünk ezeken az oldalakon az általános jogszabályok szerint. A szolgáltatóként azonban nem kötelezek a továbbított vagy tárolt harmadik fél által nyújtott információk felügyeletét vagy az illegális tevékenységet jelző körülmények vizsgálatát.'
-        }
-      }
-    };
-  }
-});
