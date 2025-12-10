@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import SafeIcon from '../common/SafeIcon';
@@ -22,9 +23,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
             <p className="text-sm text-gray-600">{t.footer.copyright}</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200">
+              <Link to="/privacy" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200">
                 {t.footer.privacy}
-              </a>
+              </Link>
               <a href="#" className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200">
                 {t.footer.imprint}
               </a>
