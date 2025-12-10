@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Request from './pages/Request';
 import Privacy from './pages/Privacy';
+import Imprint from './pages/Imprint';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/request" element={<Request />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/imprint" element={<Imprint />} />
             </Routes>
           </main>
           <Footer />
